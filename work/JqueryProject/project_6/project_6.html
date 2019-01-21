@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 6</title>
+    <link href="project_6" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="project_6.js?v=0.0.1" charset="UTF-8"></script>
+    <script type="text/javascript">
+        var test = "";
+
+        //기본형태 화면로드 시 실행 이벤트
+        $(function() {
+
+            //속성에서 가져올게 value면 .val(), text면 .text(), 그 외는 attr()
+
+            
+            //1. 
+            test = $("tbody tr td").eq(1).text();
+            $("#txt1").val(test);
+
+            //2.
+           // test = $("tbody tr").eq(1).text();
+            test = $("td").eq(2).text();
+            test = test + "," + $("td").eq(3).text();
+            $("#txt2").val(test);
+
+            //3.
+            test = $("tbody tr td").eq(0).text();
+            test = test + "," + $("tfoot tr td").eq(1).text();
+            $("#txt3").val(test);
+
+            //4.
+            // test = $("table").eq(0).find("tbody tr td").eq(3).text();
+            test = $("table").eq(0).find("tbody").eq(0).find("tr").eq(1).find("td").eq(1).text();
+            $("#txt4").val(test);
+
+
+        });
+
+        //5.
+        $(function(){
+
+            $("td").click(function(){
+                //클릭한 자신의 text 불러오기
+                //test = $(this).text();
+
+               //클릭한 자신의 index에 해당하는 th 불러오기
+               test = $("thead th").eq($(this).index()).text();
+                $("#txt5").val(test);
+
+                
+
+            })
+            $("td").css("cursor","pointer");
+        });
+
+    </script>
+</head>
+<body>
+  <div>
+
+    <table>
+        <colgroup></colgroup>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1-1</td>
+                <td>2-1</td>
+            </tr>
+            <tr>
+                <td>1-2</td>
+                <td>2-2</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>f1</td>
+                <td>f2</td>
+            </tr>
+        </tfoot>
+    </table>
+
+  </div>  
+  <hr/>
+  <div>
+     1. <input type="text" id="txt1"/><br/>
+     2. <input type="text" id="txt2"/><br/>
+     3. <input type="text" id="txt3"/><br/>
+     4. <input type="text" id="txt4"/><br/>
+     5. <input type="text" id="txt5"/><br/>
+  </div>
+</body>
+</html>

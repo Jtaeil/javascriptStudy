@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 2-1</title>
+
+    <link href="study_2.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="study_2.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+
+        });
+     
+    </script>
+    
+</head>
+<body>
+
+    <script>
+
+        $(document).ready(function () {
+
+            // 애니메이션 시작
+
+            $("#start").click(function () {
+
+                $("div").animate({ left: '100px' }, 5000);
+
+                $("div").animate({ fontSize: '3em' }, 5000);
+
+            });
+
+            // 애니메이션 중지
+
+            $("#stop").click(function () {
+
+                $("div").stop();
+
+            });
+
+            // 모든 애니메이션 중지
+
+            $("#stop2").click(function () {
+
+                $("div").stop(true);
+
+            });
+
+            // 모든 애니메이션 중지 및 최종상태로 변경
+
+            $("#stop3").click(function () {
+
+                $("div").stop(true, true);
+
+            });
+
+        });
+
+    </script>
+
+    <button id="start">Start</button>
+
+    <button id="stop">Stop</button>
+
+    <button id="stop2">Stop all</button>
+
+    <button id="stop3">Stop but finish</button>
+
+    <div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+
+
+</body>
+</html>

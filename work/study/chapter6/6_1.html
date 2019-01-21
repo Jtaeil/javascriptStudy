@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script type="text/javascript">
+
+
+        function fnClick(){
+            //alert("클릭");
+            document.getElementById("viewText").value = "클릭";
+        }
+
+        function fnDbClick(){
+            document.getElementById("viewText").value = "더블클릭";
+        }
+
+        function fnReset(){
+            document.getElementById("viewText").value = "";
+        }
+
+        function fnKeyDown(obj){
+            document.getElementById("viewText").value = obj.value;
+        }
+        function fnKeyPress(obj){
+            document.getElementById("viewText").value = obj.value;
+        }
+        function fnKeyUp(obj){
+            document.getElementById("viewText").value = obj.value;
+        }
+
+    </script>
+
+</head>
+<body>
+    <p>
+        <input type="text" id="viewText">
+    </p>
+    
+    <input type="button" value="버튼1" onclick="fnClick()">
+    <input type="button" value="버튼2" ondblclick="fnDbClick()">
+    <input type="button" value="초기화" onclick="fnReset()">
+    <input type="text" onkeydown="fnKeyDown(this)">
+    <input type="text" onkeypress="fnKeyPress(this)">
+    <input type="text" onkeyup="fnKeyUp(this)">
+
+</body>
+</html>
