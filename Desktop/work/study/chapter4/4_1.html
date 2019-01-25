@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-1</title>
+
+    <script type="text/javascript">
+
+        //4.1 함수의 기본 형식
+        /*
+        fnTest();        
+        function fnTest(){
+            document.write("펑션실행");
+        }
+        
+        */
+
+        //4.2 리턴함수
+        /*
+        document.write(fnReturn());
+        function fnReturn(){
+            return "리턴함수";
+        }
+        */
+
+        //4.3 함수를 변수에 대입
+        /*
+        var add = function(a, b) {
+			return a + b;
+		}
+		var plus = add;
+		document.write("2 + 3 = " + plus(2, 3));
+        */
+
+        //4.4
+        /*
+        var add = function(a, b) {
+			return a + b;
+		}
+		var multi = function(a, b) {
+			return a * b;
+		}
+		function calc(a, b, f) {
+			return f(a, b);
+		}
+        */
+		//document.write("2 + 3 = " + calc(2, 3, add) +"<br>");
+		//document.write("2 * 3 = " + calc(2, 3, multi) +"<br>");
+
+        //4.5 Closure
+        /*
+        function outer() {
+			var value = 1234;
+			
+            function inner() {
+				document.write("value = " + value + "<br>");
+			}
+            inner();
+		}
+
+        outer();
+        */
+
+        //4.6 Closure를 이용한 타이머
+        function outcount() {
+			var count = 0;
+			
+            setInterval(function() {
+                count++;
+                document.write(count + "초 지났습니다." + "<br>");
+            }, 1000);
+		}
+
+		//outcount();
+        
+        // 4.7 인코딩
+        var s = "방/탄:소@년";
+		document.write("원본 = " + s + "<br>");
+		var e = encodeURIComponent(s);
+		document.write("인코딩 = " + e + "<br>");
+		var u = decodeURIComponent(e);
+		document.write("디코딩 = " + u + "<br>");
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+
+.calcuration {
+    margin: 30px auto;
+    border: none;
+
+}
+
+table input {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px 0;
+    background: #ddd;
+    border-radius: 4px;
+    border: none;
+}
+
+input[type="text"] {
+    text-align: right;
+
+}
+
+input[type="number"] {
+    text-align: right;
+}
+
+input[type="button"] {
+    border: none;
+    background: #cccccc;
+    box-shadow: 0 4px #999;
+    margin: 0, 5px, 10px, 0;
+    cursor: pointer;
+}
+
+input[class="type"] {
+    background-color: #ffcc00;
+    box-shadow: 0 4px #ffaa00;
+    color: #3498cb;
+    font-weight: bold;
+}

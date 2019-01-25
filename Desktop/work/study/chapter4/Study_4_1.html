@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        
+        //document.write(fnTest("+",1,5));
+        //document.write(fnTest("-",10,5));
+        fnTest("+",1,5);
+        fnTest("-",10,5);
+
+        /*
+            type : + 합
+            type : - 차
+        */
+        function fnTest(type, a, b){
+            var msg = "";
+
+            /*
+            if(type === "+"){
+                //a,b의 합
+                msg = a + type + b + "=" + (a+b);
+            }
+            else if(type === "-"){
+                //a,b의 차
+                msg = a + type + b + "=" + (a-b);
+            }
+            */
+            switch (type) {
+                case "+" : msg = a + type + b + " = " + (a+b);
+                    break;
+                case "-" : msg = a + type + b + " = " + (a-b);
+                    break;
+            }
+            //return msg + fnLine();
+            document.write(msg + fnLine());
+        }
+        
+        function fnLine(){
+            return "<br/>";
+        }
+
+        var add = function(a, b) {
+			return a + b;
+		}
+		var multi = function(a, b) {
+			return a * b;
+		}
+		function calc(a, b, f) {
+			return f(a, b);
+		}
+		//document.write("2 + 3 = " + calc(2, 3, add) +"<br>");
+		//document.write("2 * 3 = " + calc(2, 3, multi) +"<br>");
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
