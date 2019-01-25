@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        table input{
+            width:100%;
+            padding:5px 0;
+        }
+        input[type="number"]{
+            font-size:20px;
+            text-align: right;
+        }
+    </style>
+    
+    <script type="text/javascript">
+
+        var value1 = "";
+        var strType = "";
+        var value2 = "";
+    
+        function fnValue1(value){
+            
+            if(strType === ""){
+                value1 = value1.toString() + value.toString();
+            }
+            else{
+                value2 = value2.toString() + value.toString();
+            }
+            var rtnValue = document.getElementById("txtText").value;
+            document.getElementById("txtText").value = rtnValue.toString() + value.toString();
+        }
+
+        function fnValue2(value){
+
+        }
+
+        function fnType(type){
+            strType = type;
+            var rtnValue = document.getElementById("txtText").value;
+            document.getElementById("txtText").value = rtnValue.toString() + type.toString();
+        }
+
+        function fnEnd(){
+            document.getElementById("viewText").value = fnCalculation(strType,value1,value2);
+        }
+
+
+        function fnCalculation(type, value1, value2){
+            var rtnValue = "";
+
+            value1 = Number(value1);
+            value2 = Number(value2);
+
+            switch(type){
+                case"+": rtnValue = value1 + value2;
+                    break;
+                case"-": rtnValue = fnTst(value1,value2);
+                    break;
+                case"*": rtnValue = value1 * value2;
+                    break;
+                case"/": rtnValue = value1 / value2;
+                    break;
+            }
+            
+            return rtnValue;
+        }
+
+        function fnReset(){
+            value1 = "";
+            strType = "";
+            value2 = "";
+            document.getElementById("txtText").value = "";
+            document.getElementById("viewText").value = 0;
+        }
+
+    </script>
+    
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="txtText" readonly />
+                <input type="number" id="viewText" readonly value="0" />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="fnValue1(7)"/></td>
+            <td><input type="button" value="8" onclick="fnValue1(8)"/></td>
+            <td><input type="button" value="9" onclick="fnValue1(9)"/></td>
+            <td><input type="button" value="/"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="fnValue1(4)"/></td>
+            <td><input type="button" value="5" onclick="fnValue1(5)"/></td>
+            <td><input type="button" value="6" onclick="fnValue1(6)"/></td>
+            <td><input type="button" value="*"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="fnValue1(1)"/></td>
+            <td><input type="button" value="2" onclick="fnValue1(2)"/></td>
+            <td><input type="button" value="3" onclick="fnValue1(3)"/></td>
+            <td><input type="button" value="-"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="fnReset()"/></td>
+            <td><input type="button" value="0" onclick="fnValue1(0)"/></td>
+            <td><input type="button" value="back"/></td>
+            <td><input type="button" value="+" onclick="fnType('+')"/></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="button" value="=" onclick="fnEnd()" style="width:100%;"/>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

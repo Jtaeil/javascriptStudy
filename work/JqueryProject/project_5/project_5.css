@@ -1,0 +1,22 @@
+#divText{
+    margin-bottom: 20px;
+}
+label{
+    width:30px;
+    height:30px;
+    text-align: center;
+    line-height:30px;
+    border:1px solid #ddd;
+    display: inline-block;
+    font-size:15px;
+}
+.labelClick{
+    background:black;
+    color:#fff;
+}
+
+.labeldisabled{
+    background:gray;
+    color:#fff;
+}
+
